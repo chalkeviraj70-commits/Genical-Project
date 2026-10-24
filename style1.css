@@ -142,7 +142,7 @@ position: relative;
 .topphoto{
     height: 700px;
     width: 100%;
-    background-image: url(./top1.png);
+    background-image: url(./assets/top1.png);
     background-size: 100% 700px;
     /* background-color: black; */
     display: flex;
@@ -355,7 +355,7 @@ position: relative;
 .about .aright{
     height: 80%;
     width: 50%;
-    background-image: url(./ChatGPT\ Image\ Aug\ 29\,\ 2026\,\ 08_17_30\ PM.png);
+    background-image: url(./assets/ChatGPT\ Image\ Aug\ 29\,\ 2026\,\ 08_17_30\ PM.png);
     background-size: 100% 100%;
     border-radius: 30px;
     box-shadow: -50px 50px 0px rgb(71, 71, 151);
@@ -386,7 +386,7 @@ position: relative;
 .aright .corner{
     height: 150px;
     width: 250px;
-    background-image: url(./top33.png);
+    background-image: url(./assets/top33.png);
     background-size: 250px 150px;
     border-radius: 30px 30px 30px 0px;
     box-shadow: 10px -10px 0px white;
@@ -398,7 +398,7 @@ position: relative;
 .client{
     height: 500px;
     width: 100%;
-    background-image: url(./hand.jpg);
+    background-image: url(./assets/hand.jpg);
     background-size: 100% 500px;
     filter: opacity(70%);
     filter: contrast(50%);
@@ -523,7 +523,7 @@ position: relative;
 .cphoto{
     height: 70%;
     width: 70%;
-    background-image: url(./top4.png);
+    background-image: url(./assets/top4.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     /* border: 1px solid red; */
@@ -549,7 +549,7 @@ position: relative;
     width: 200px;
     /* border: 1px solid red; */
     border-radius: 30px 30px 0px 30px;
-    background-image: url(./top33.png);
+    background-image: url(./assets/top33.png);
     background-size: 200px 120px;
     box-shadow: -10px -10px 0px white;
     position: absolute;
@@ -840,7 +840,7 @@ position: relative;
 .hand{
     height: 500px;
     width: 100%;
-    background-image: url(./hand2.jpg);
+    background-image: url(./assets/hand2.jpg);
     background-size: 100% 500px;
     display: flex;
     align-items: center;
@@ -1375,23 +1375,23 @@ margin-top: 20px;
 @keyframes slide {
 
     0%{
-        background-image: url(./top1.png);
+        background-image: url(./assets/top1.png);
     }
 
     25%{
-        background-image: url(./top5.png);
+        background-image: url(./assets/top5.png);
     }
 
     50%{
-        background-image: url(./therpy.avif);
+        background-image: url(./assets/therpy.avif);
     }
 
     75%{
-        background-image: url(./family.avif);
+        background-image: url(./assets/family.avif);
     }
 
     100%{
-        background-image: url(./mental.avif);
+        background-image: url(./assets/mental.avif);
     }
     
 }
