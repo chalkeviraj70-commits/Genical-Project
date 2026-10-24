@@ -94,7 +94,7 @@
 .about .aright{
     height: 80%;
     width: 50%;
-    background-image: url(./ChatGPT\ Image\ Aug\ 29\,\ 2026\,\ 08_17_30\ PM.png);
+    background-image: url(./assets/ChatGPT\ Image\ Aug\ 29\,\ 2026\,\ 08_17_30\ PM.png);
     background-size: 100% 100%;
     border-radius: 20px;
     box-shadow: -20px 20px 0px rgb(71, 71, 151);
@@ -201,7 +201,7 @@
 .cphoto{
     height: 80%;
     width: 90%;
-    background-image: url(./top4.png);
+    background-image: url(./assets/top4.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     /* border: 1px solid red; */
@@ -214,7 +214,7 @@
     width: 50%;
     /* border: 1px solid red; */
     border-radius: 20px 20px 0px 20px;
-    background-image: url(./top33.png);
+    background-image: url(./assets/top33.png);
     background-size: 100% 100px;
     box-shadow: -10px -10px 0px white;
     position: absolute;
@@ -803,7 +803,7 @@ font-size: 40px;
 .aright .corner{
     height: 100px;
     width: 150px;
-    background-image: url(./top33.png);
+    background-image: url(./assets/top33.png);
     background-size: 100% 100%;
     border-radius: 10px 10px 10px 0px;
     box-shadow: 5px -5px 0px white;
@@ -815,7 +815,7 @@ font-size: 40px;
     margin-top: 980px;
     height: 400px;
     width: 100%;
-    background-image: url(./hand.jpg);
+    background-image: url(./assets/hand.jpg);
     background-size: 100% 400px;
      gap: 50px;
     
@@ -1437,7 +1437,7 @@ font-size: 40px;
     margin-top: 480px;
     height: 400px;
     width: 100%;
-    background-image: url(./hand.jpg);
+    background-image: url(./assets/hand.jpg);
     background-size: 100% 400px;
      gap: 40px;
      flex-direction: column;
