@@ -982,6 +982,30 @@ margin-top: 20px;
     /* background-color: #e46a07; */
     margin-left: 60px;
 }
+.appointment select{
+    height: 50px;
+     width: 160px;  
+     /* line-height: 100; */
+    border-radius: 30px;
+    font-size: 15px;
+    /* margin: 20px; */
+    text-align: center;
+    /* padding-bottom: 20px; */
+    margin-bottom: 10px;
+    /* gap: 20px; */
+}
+
+
+.appointment select option{
+    height: 10px;
+    background-color:rgb(242, 242, 242);
+    padding: 70px;
+    border-radius: 20px;
+    /* line-height: 10; */
+    font-size: 15px;
+    margin-top: 50px;
+}
+
 .leftapt label{
     font-size:x-large;
      margin-top: 30px;
