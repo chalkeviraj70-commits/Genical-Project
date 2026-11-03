@@ -386,7 +386,8 @@
         </div>
         <div class="appointment">
           <div class="leftapt">
-            <form action="">
+
+            <form action=""  submit=" return false">
               <label for="">Your Name *</label><br>
               <input type="text" placeholder="Full name" name="" id="" style="padding-left: 5%;">
               <br>
@@ -399,8 +400,18 @@
               <br>
               <div class="formbox">
                 <div class="fleft">
-                  <label for="">Service</label><br>
-                  <input type="text" name="" placeholder="Services" id="formservice" style="padding-left: 5%;">
+                  <label for="service" id="s1">Service</label><br>
+                  <select name="" id="service" >
+                    <option value="" selected disabled hidden>Select Services</option>
+                    <!-- <option value="">   </option> -->
+                    <option value="Individual Therapy">Individual Therapy</option>
+                    <option value="Family Counseling">Family Counseling</option>
+                    <option value="Couples Therapy">Couples Therapy</option>
+                    <option value="Children Therapy">Children Therapy</option>
+                    <option value="Group Counseling">Group Counseling</option>
+                    <option value="Career Counseling">Career Counseling</option>
+                  </select>
+
                 </div>
 
                 <div class="fright">
