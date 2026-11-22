@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #eef2ff;
+            font-family: Arial;
+        }
+
+        .loginbox {
+            height: 350px;
+            width: 350px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px lightgray;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        }
+        img{
+            height: 130px;
+            width: 300px ;
+            margin-top: -20px;
+            text-align: left;
+        }
+
+        form {
+            width: 280px;
+        }
+        h2{
+            background: linear-gradient(to right, #170ceb, #fc0580);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+        }
+
+        label {
+            font-size: 16px;
+            color: #334155;
+        }
+
+     #lemail,#lpass
+       {
+            width: 100%;
+            height: 38px;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            background-color: #f8fafc;
+            font-size: 15px;
+        }
+
+        #but {
+            width: 100%;
+            padding: 10px;
+              background: linear-gradient(to right, #36a1cc, #ba08dd);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            /* cursor: pointer; */
+            font-size: 15px;
+        }
+
+        #but:hover{
+  background: linear-gradient(to right, #4338ca, #7e22ce);        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #4f46e5;
+        }
+
+        a:hover{
+            color: #fc0580;
+        }
+
+        #v1, #v2 {
+            color: red;
+            font-size: 12px;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="both">
+    <div class="loginbox">
+        <!-- <img src="./assets/Genical Mental Health Logo.png" alt=""> -->
+        <form action="">
+
+            <h2 style="text-align:center; margin-bottom:25px;">
+                Login Here
+            </h2>
+
+            <label for="lemail">Enter Your Email :-</label><br>
+            <input type="email" id="lemail" placeholder="Enter email">
+            <br>
+            <span id="v1"></span><br><br>
+
+            <label for="lpass">Enter Your Password :-</label><br>
+            <input type="password" id="lpass" placeholder=" Enter password">
+            <br>
+            <span id="v2"></span><br><br>
+
+            <input type="button" id="but" value="submit" onclick="loginsystem()">
+            <!-- <input type="button" value="logout" id="logout"> -->
+
+            <a href="./RegisterPage.html">Register</a>
+
+        </form>
+    </div>
+    </div>
+
+    <script>
+        function loginsystem() {
+        let logmail=document.getElementById("lemail").value
+        let logpass=document.getElementById("lpass").value
+
+        let record = new Array()
+
+        record= JSON.parse(localStorage.getItem("user"))  ?? []
+        //for email
+        
+        //   if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(logmail)) {
+        //         document.getElementById("v1").innerText = "Enter valid email address";
+        //         document.getElementById("v1").style.color = "red";
+        //     }
+
+
+            
+        //     else if (logpass.length < 8) {
+        //         document.getElementById("v2").innerText = "Password must contain at least 8 characters";
+        //         document.getElementById("v2").style.color = "red";
+        //     }
+
+        //     else if (!/[A-Z]/.test(logpass)) {
+        //         document.getElementById("spass").innerText = "At least one uppercase letter required";
+        //         document.getElementById("spass").style.color = "red";
+        //     }
+
+        //     else if (!/[a-z]/.test(logpass)) {
+        //         document.getElementById("v2").innerText = "At least one lowercase letter required";
+        //         document.getElementById("v2").style.color = "red";
+        //     }
+
+        //     else if (!/[0-9]/.test(logpass)) {
+        //         document.getElementById("v2").innerText = "At least one number required";
+        //         document.getElementById("v2").style.color = "red";
+        //     }
+
+        //     else if (!/[@#$%^&*!]/.test(logpass)) {
+        //         document.getElementById("v2").innerText = "At least one special character required";
+        //         document.getElementById("v2").style.color = "red";
+        //     }
+         if(!record.some((val) =>
+        {
+            return val.newemail == logmail
+        })){
+                document.getElementById("v1").innerText="your email is not register"
+                document.getElementById("v1").style.color="red"
+            }
+
+
+
+
+
+         else if(record.some((val) =>
+        {
+            return val.newemail == logmail &&  val.newepass == logpass
+
+        }))
+        {
+            alert("your login successfully")
+            localStorage.setItem("isLoggedIn", "true");
+            localStorage.setItem("email", logmail);
+            window.location.href="index.html#appointment"
+            
+        }
+        else{
+               document.getElementById("v2").innerText="password in not match"
+               document.getElementById("v2").style.color="red"
+        }
+    }
+
+
+    document.getElementById("lemail").addEventListener("input", function(){
+        document.getElementById("v1").innerText=""
+
+    })
+
+    document.getElementById("lpass").addEventListener("input",function(){
+        document.getElementById("v2").innerText=""
+    })
+
+
+
+    </script>
+</body>
+</html>
