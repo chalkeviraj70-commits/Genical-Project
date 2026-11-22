@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 150vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+           background-color: aliceblue;
+        }
+
+        .registerbox {
+            width: 380px;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            background: linear-gradient(90deg, #4776e6, #8e54e9);
+            background-clip: text;
+            color: transparent;
+        }
+
+        input:not([type="button"]) {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        input:focus {
+            border-color: #4776e6;
+            box-shadow: 0 0 5px rgba(71,118,230,0.3);
+        }
+
+        span {
+            color: red;
+            font-size: 12px;
+        }
+
+        input[type="button"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 7px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            background: linear-gradient(90deg, #4776e6, #8e54e9);
+        }
+
+        input[type="button"]:hover {
+            background: linear-gradient(90deg, #8e54e9, #4776e6);
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 18px;
+            color: #4776e6;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="registerbox">
+
+        <h1>Register Here</h1>
+
+        <form action="">
+            <input type="text" id="fname" placeholder="Enter your name" required><br>
+            <span id="sname"></span><br><br>
+
+            <input type="tel" id="monum" placeholder="phone Number" required><br>
+            <span id="snum"></span><br><br>
+
+            <input type="email" id="mymail" placeholder="Enter email" required><br>
+            <span id="smail"></span><br><br>
+
+            <input type="password" id="pass" placeholder="password" required><br>
+            <span id="spass"></span><br><br>
+
+            <input type="password" id="conpass" placeholder="Confirm password" required>
+            <br>
+            <span id="scpass"></span><br><br>
+            <br>
+
+            <input type="button" value="submit" onclick="myfun()">
+
+            <a href="login.html">login</a>
+        </form>
+
+    </div>
+
+</body>
+</html>
+
+
+    <script>
+        function myfun() {
+            let uname = document.getElementById("fname").value;
+            let unum = document.getElementById("monum").value;
+            let umail = document.getElementById("mymail").value;
+            let upass = document.getElementById("pass").value;
+            let uconfirmp = document.getElementById("conpass").value
+
+            // localStorage.setItem("uname", uname);
+            // localStorage.setItem("upass", upass);
+
+            //    (localStorage.getItem("uname"))
+            //    (localStorage.getItem("upass"))
+
+            var record = new Array();
+
+            record = JSON.parse(localStorage.getItem("user")) ?? [];
+            console.log(record);
+
+            //for user name
+
+            if (uname.length < 3) {
+                document.getElementById("sname").innerText = "name must contain at least 3 character:"
+                document.getElementById("sname").style.color = "red"
+            }
+
+            else if (uname.length > 30) {
+                document.getElementById("sname").innerText = "Name cannot exceed 30 characters:"
+                document.getElementById("sname").style.color = "red"
+            }
+
+            else if (!/^[A-Za-z]+$/.test(uname)) {
+                document.getElementById("sname").innerText = "only alphabets are allow:"
+                document.getElementById("sname").style.color = "red"
+            }
+
+
+            //for phone number
+
+
+            else if (unum.length !== 10) {
+                document.getElementById("snum").innerText = "must contain exact only 10 digit"
+                document.getElementById("snum").style.color = "red"
+            }
+
+            else if (!/^[6-9][0-9]{9}$/.test(unum)) {
+                document.getElementById("snum").innerText = "number is invalid"
+                document.getElementById("snum").style.color = "red"
+
+            }
+
+            //for email Id
+
+            else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(umail)) {
+                document.getElementById("smail").innerText = "Enter valid email address";
+                document.getElementById("smail").style.color = "red";
+            }
+
+
+            //for password
+
+            else if (upass.length < 8) {
+                document.getElementById("spass").innerText = "Password must contain at least 8 characters";
+                document.getElementById("spass").style.color = "red";
+            }
+
+            else if (!/[A-Z]/.test(upass)) {
+                document.getElementById("spass").innerText = "At least one uppercase letter required";
+                document.getElementById("spass").style.color = "red";
+            }
+
+            else if (!/[a-z]/.test(upass)) {
+                document.getElementById("spass").innerText = "At least one lowercase letter required";
+                document.getElementById("spass").style.color = "red";
+            }
+
+            else if (!/[0-9]/.test(upass)) {
+                document.getElementById("spass").innerText = "At least one number required";
+                document.getElementById("spass").style.color = "red";
+            }
+
+            else if (!/[@#$%^&*!]/.test(upass)) {
+                document.getElementById("spass").innerText = "At least one special character required";
+                document.getElementById("spass").style.color = "red";
+            }
+
+            //for confirm password
+
+            else if (upass != uconfirmp) {
+                // alert("password and confirm password do not match")
+                document.getElementById("scpass").innerText = "password and confirm password do not match"
+                document.getElementById("scpass").style.color = "red"
+            }
+
+
+
+            else if (
+                record.some((val) => {
+                    return val.newemail == umail;
+                })
+            ) {
+                alert("email already exist");
+            }
+            else {
+                record.push({
+                    newname: uname,
+                    newnum: unum,
+                    newemail: umail,
+                    newepass: upass,
+                    newcpass: uconfirmp
+                });
+                console.log(record);
+
+                localStorage.setItem("user", JSON.stringify(record));
+                alert("your data register successfully !");
+                window.location.href = "login.html"
+            }
+        }
+
+
+
+        document.getElementById("fname").addEventListener("input", function () {
+            document.getElementById("sname").innerText = "";
+        });
+
+        document.getElementById("monum").addEventListener("input", function () {
+            document.getElementById("snum").innerText = "";
+        });
+
+        document.getElementById("mymail").addEventListener("input", function () {
+            document.getElementById("smail").innerText = "";
+        });
+
+        document.getElementById("pass").addEventListener("input", function () {
+            document.getElementById("spass").innerText = "";
+        });
+
+        document.getElementById("conpass").addEventListener("input", function () {
+            document.getElementById("scpass").innerText = "";
+        });
+    </script>
+</body>
+
+</html>
