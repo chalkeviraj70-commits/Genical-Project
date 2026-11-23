@@ -8,29 +8,41 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css">
   <link rel="stylesheet" href="./style1.css">
   <link rel="stylesheet" href="./responce.css">
-   <!-- <link rel="stylesheet" href="./chat.css"> -->
+  <link rel="stylesheet" href="./login.html">
+  <link rel="stylesheet" href="./registerpage.html">
+  <link rel="stylesheet" href="./showaptDetails.html">
+  <script src="./aptbackend.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="./navjquery.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="./logout.js"></script>
+  <script src="./client.js"></script>
+
+  <!-- <link rel="stylesheet" href="./chat.css"> -->
 </head>
 
 <body>
+
+
   <div class="main">
     <div class="nav">
       <img src="./assets/Genical-Logo-2.png" alt="">
-      <i id="lgi1" class="fa-solid fa-bars" style="color: rgb(248, 249, 250)"></i>
+      <i id="lgi1" class="fa-solid fa-bars" style="color: rgb(235, 131, 27)"></i>
       <div class="navbar">
         <ul class="list1">
           <li><a href="">Home</a>
 
-          <li><a href="#aboutpage">About</a>
+          <li><a href="">About</a>
 
             <ul class="list2">
-              <li><a href="">About Us</a></li>
+              <li><a href="#aboutpage">About Us</a></li>
               <li><a href="">Psychologist</a></li>
 
             </ul>
           </li>
-          <li><a href="#servicespage">Services</a>
+          <li><a href="">Services</a>
             <ul class="list2">
-              <li><a href="">Services</a></li>
+              <li><a href="#servicespage">Services</a></li>
               <li><a href=""> Details</a></li>
             </ul>
           </li>
@@ -44,16 +56,35 @@
             </ul>
           </li>
 
-          <li><a href="#blogpage">Blog</a>
+          <li><a href="">Blog</a>
 
             <ul class="list2">
-              <li><a href="">Blog</a></li>
+              <li><a href="#blogpage">Blog</a></li>
               <li><a href="">Single Post</a></li>
             </ul>
           </li>
 
           <li><a href="">Contact Us</a></li>
+
+         
+          <li id="insystem">
+            <a href="login.html" id="login">
+              <i id="login" class="fa-solid fa-right-to-bracket" style="color: rgb(235, 130, 11);"></i>
+
+              <span id="logspan">Login</span>
+          </li>
+          <li id="outsystem">
+
+            <a href="logout.html" class="out">
+              <i id="logout" class="fa-solid fa-right-from-bracket" style="color: rgb(250, 154, 9);"></i>
+
+              <span id="logspan" class="out">Logout</span>
+            </a>
+          </li>
         </ul>
+    
+
+
       </div>
       <div class="call">
 
@@ -68,14 +99,14 @@
         </div>
 
       </div>
-      <i id="i1" class="fa-solid fa-tty" style="color: rgb(217, 164, 65);"></i>
+      <!-- <i id="i1" class="fa-solid fa-tty" style="color: rgb(217, 164, 65);"></i> -->
 
     </div>
     <div class="topphoto">
       <!-- <img src="./family.avif" alt=""> -->
       <div class="topphototext">
-        <h3>Welcome to Genical</h3>
-        <h1>You Deserve <span id="ssp1">Peace & Freedom</span></h1>
+        <h3 id="toph3">Welcome to Genical</h3>
+        <h1 id="deserv">You Deserve <span id="ssp1">Peace & Freedom</span></h1>
         <p id="pp1">
           Professional psychological counseling and therapy services to help
           you overcome life's challenges and achieve emotional well-being.
@@ -152,25 +183,27 @@
     </div>
 
     <div class="client">
-      <div class="rate">
+      <div class="rate" id="up">
         <i class="fa-solid fa-award" style="color: rgb(216, 163, 66)"></i>
-        <p><sup>+</sup>9,999 <sup>k</sup></p>
+        <p><sup>+</sup><span class="count">0</span> <sup>k</sup></p>
         <p id="p1">Trusted Client</p>
       </div>
-      <div class="rate">
+      <div class="rate" id="down">
         <i class="fa-solid fa-user-doctor" style="color: rgb(216, 163, 66)"></i>
-        <p><sup>+</sup>9,999 <sup>k</sup></p>
+        <p><sup>+</sup><span class="count">0</span> <sup>k</sup></p>
         <p id="p1">Trusted Client</p>
       </div>
-      <div class="rate">
+      <div class="rate" id="up2">
         <i class="fa-solid fa-hand-holding-medical" style="color: rgb(216, 163, 66)"></i>
-        <p><sup>+</sup>9,999 <sup>k</sup></p>
+        <p><sup>+</sup><span class="count">0</span> <sup>k</sup></p>
         <p id="p1">Trusted Client</p>
       </div>
-      <div class="rate">
+      <div class="rate" id="down2">
         <i class="fa-regular fa-star" style="color:rgb(216, 163, 66)"></i>
-        <p><sup>+</sup>9,999 <sup>k</sup></p>
+        <p><sup>+</sup> <span class="count">0</span> <sup>k</sup></p>
         <p id="p1">Trusted Client</p>
+        <input type="button" value="Start" id="b1" />
+        <input type="button" value="Stop" id="b2" />
       </div>
 
 
@@ -231,9 +264,9 @@
           </div>
         </div>
         <div class="cright">
-          <h3>Why Choose Genical</h3>
-          <h1>Taking Care of Your Mental Health</h1>
-          <p>
+          <h3 id="h31">Why Choose Genical</h3>
+          <h1 id="h111">Taking Care of Your Mental Health</h1>
+          <p id="pp">
             Nullam fermentum ullamcorper diam sit amet porta. Etiam ac enim
             velit. Ut ut mi sed turpis accumsan sagittis ac eu magna. Etiam ac
             nisi tellus. Morbi at velit nisl.
@@ -274,21 +307,21 @@
             </div>
           </div>
           <div class="bar">
-            <h3>Confidentiality</h3>
+            <h3 class="con">Confidentiality</h3>
             <div class="bar1">
               <div class="inbar1">
                 <p>99%</p>
               </div>
             </div>
 
-            <h3>Therepy</h3>
+            <h3 class="con">Therepy</h3>
             <div class="bar2">
               <div class="inbar2">
                 <p>95%</p>
               </div>
             </div>
 
-            <h3>Counseling</h3>
+            <h3 class="con">Counseling</h3>
             <div class="bar3">
               <div class="inbar3">
                 <p>97%</p>
@@ -335,14 +368,17 @@
     <div class="hand">
       <div class="htext">
         <p id="hp1">You Need to Understand That Mental Anxiety Can be <span>Discussed</span></p>
-        <p>Etiam posuere sapien ut luctus vehicula. Aenean non auctor arcu, et tempus arcu. Integer tristique volutpat
+        <p id="hp2">Etiam posuere sapien ut luctus vehicula. Aenean non auctor arcu, et tempus arcu. Integer tristique
+          volutpat
           posuere. Aenean ac lectus ultrices, lacinia leo a volutpat eros curabitur.</p>
-        <input type="submit" value="Consultation Now" name="" id="">
+        <input type="submit" value="Consultation Now" name="" id="hpb">
       </div>
     </div>
+
+
     <div class="stages">
       <p id="sp1">Our Stages</p>
-      <h1>Because All Problems Have Solutions</h1>
+      <h1 id="sp22">Because All Problems Have Solutions</h1>
       <p id="sp2">Etiam posuere sapien ut luctus vehicula. Aenean non auctor arcu, et tempus arcu. Integer tristique
         volutpat posuere. Aenean ac lectus ultrices, lacinia leo a volutpat eros curabitur.</p>
 
@@ -384,24 +420,27 @@
           <p>Phasellus orci ut augue finibus vel malesuad erat sed ipsum.</p>
 
         </div>
-        <div class="appointment">
+
+
+        <div class="appointment" id="appointment">
           <div class="leftapt">
 
-            <form action=""  submit=" return false">
+            <form action="" onsubmit=" return false">
               <label for="">Your Name *</label><br>
-              <input type="text" placeholder="Full name" name="" id="" style="padding-left: 5%;">
+              <input type="text" placeholder="Full name" name="" id="aname" style="padding-left: 5%;" required>
+
               <br>
               <label for="">Your Email*</label><br>
-              <input type="email" placeholder="Email Id" name="" id="" style="padding-left: 5%;"  >
+              <input type="email" placeholder="Email Id" name="" id="aemail" style="padding-left: 5%;" required>
 
               <br>
               <label for="">Phone Number*</label><br>
-              <input type="tel" name="" placeholder="Phone Number" id="" style="padding-left: 5%;">
+              <input type="tel" name="" placeholder="Phone Number" id="anum" style="padding-left: 5%; " required>
               <br>
               <div class="formbox">
                 <div class="fleft">
                   <label for="service" id="s1">Service</label><br>
-                  <select name="" id="service" >
+                  <select name="" id="service" required>
                     <option value="" selected disabled hidden>Select Services</option>
                     <!-- <option value="">   </option> -->
                     <option value="Individual Therapy">Individual Therapy</option>
@@ -417,10 +456,10 @@
                 <div class="fright">
 
                   <label for="">Select Date</label><br>
-                  <input type="date" name="" id="" style="padding-left: 5%;">
+                  <input type="date" name="" id="adate" style="padding-left: 5%;" required>
                 </div>
               </div>
-              <input type="submit" value="Book An Appointment" name="" id="Book">
+              <input type="button" value="Book An Appointment" name="" id="Book" onclick="bookapt()">
             </form>
           </div>
           <div class="rightapt">
@@ -488,8 +527,8 @@
     </div>
     <div class="blog" id="blogpage">
 
-      <h4>Our Blog</h4>
-      <h1>Blog & Articles</h1>
+      <h4 class="ourb">Our Blog</h4>
+      <h1 class="ourb">Blog & Articles</h1>
 
       <p id="bp1">
         Etiam posuere sapien ut luctus vehicula. Aenean non auctor arcu,
@@ -501,10 +540,10 @@
 
         <!-- Blog 1 -->
         <div class="blogbox">
-         
-             <img src="./assets/top4.png" alt="">
-         
-         
+
+          <img src="./assets/top4.png" alt="">
+
+
 
           <div class="blogbot">
 
@@ -535,7 +574,7 @@
 
         <!-- Blog 2 -->
         <div class="blogbox">
-         
+
           <img src="./assets/top1.png" alt="">
 
           <div class="blogbot">
@@ -704,6 +743,39 @@
 
 
   </div>
+  <script src="./scrollreveal.js"></script>
+  <script>
+
+    //for client rolling numbers 
+
+    let num = document.querySelectorAll(".count");
+    let x = [0, 0, 0, 0];
+    let a;
+    function change() {
+      for (let i = 0; i < num.length; i++) {
+        x[i] = x[i] + 9;
+
+        if (x.every(value => (value >= 9999))) {
+          clearInterval(a);
+        }
+        num[i].innerText = x[i];
+      }
+    }
+
+
+    $(function () {
+      $("#b1").click(function () {
+        a = setInterval(change, 1)
+      })
+    })
+
+    $(function () {
+      $("#b2").click(function () {
+        clearInterval(a)
+      })
+    })
+  </script>
+
 </body>
 
 </html>
