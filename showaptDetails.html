@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Appointment Details</title>
+</head>
+<body>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Appointment Details</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: aliceblue;
+        }
+
+        .detailsbox {
+            width: 420px;
+            padding: 35px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 26px;
+            background: linear-gradient(90deg, #3b67ce, #df0ec3);
+            background-clip: text;
+            color: transparent;
+        }
+
+        h4 {
+            padding: 13px;
+            margin-bottom: 12px;
+            background: #f3f5fa;
+            border-radius: 7px;
+            color: #333;
+            font-size: 15px;
+        }
+
+        h4 span {
+            color: #4776e6;
+            font-weight: normal;
+            margin-left: 5px;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            padding: 12px;
+            border-radius: 7px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background: linear-gradient(90deg, #2758ca, #f029f0);
+        }
+
+        a:hover {
+            background: linear-gradient(90deg, #8e54e9, #4776e6);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="detailsbox">
+
+        <h1>My Appointment Details</h1>
+
+        <h4>Name: <span id="namespan"></span></h4>
+
+        <h4>Email: <span id="emailspan"></span></h4>
+
+        <h4>Number: <span id="numspan"></span></h4>
+
+        <h4>Service: <span id="servicespan"></span></h4>
+
+        <h4>Date: <span id="datespan"></span></h4>
+
+        <a href="index.html">back</a>
+
+    </div>
+
+</body>
+
+</html>
+
+
+    <script>
+
+      
+        let loginemail = localStorage.getItem("email");
+
+        // Step 2: Get Appointment Data
+        let info = JSON.parse(localStorage.getItem("fetchdata")) ?? [];
+
+        // Step 3: Find Current User
+        let currentuser = info.filter(function(item) {
+            return item.usermail == loginemail;
+        });
+
+   
+        if (currentuser.length > 0) {
+
+            let user = currentuser[currentuser.length - 1];
+
+            document.getElementById("namespan").innerText = user.username;
+
+            document.getElementById("emailspan").innerText = user.usermail;
+
+            document.getElementById("numspan").innerText = user.usernum;
+
+            document.getElementById("servicespan").innerText = user.userservice;
+
+            document.getElementById("datespan").innerText = user.userdate;
+
+        }
+        else {
+            alert("No Appointment Found");
+        }
+
+    </script>
+
+</body>
+</html>
